@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <%- include('layoutSub/head'); %>
+    <%- include('form/style'); %>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <%- include('layoutSub/header'); %>
+    <div id="main" style="display: flex; justify-content: center">
+      <%if (typeof msg !== 'undefined' && msg !== '') { %>
+        <h2><%- msg %></h2>
+      <% } %>
+      <form method="POST" action="/wizards/add" style="max-height: 470px;" enctype="multipart/form-data">
+        <h2>New record</h2>
+        <label for="user">Nome</label><br>
+        <input type="text" name="name" id="name" required><br>
+        <label for="pass">Description</label><br>
+        <textarea name="desc" id="desc" rows="10" style="width: 100%; resize: none" required></textarea>
+        <input type="file" name="img" id="img" required><br>
+        <div id="btnAlignment">
+          <input type="submit" value="Enviar">
+        </div>
+      </form>
+    </div>
+    <%- include('layoutSub/footer'); %>
+  </div>
+</body>
+</html>

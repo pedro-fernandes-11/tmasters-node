@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <%- include('layout/head'); %>
+    <%- include('form/style'); %>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <%- include('layout/header'); %>
+    <div id="main" style="display: flex; justify-content: center">
+      <form method="POST" action="/registration" style="max-height: 400px;">
+        <h2>Login</h2>
+        <%if (typeof msg !== 'undefined' && msg !== '') { %>
+          <h2><%- msg %></h2>
+        <% } %>
+        <label for="user">User</label><br>
+        <input type="text" name="user" id="user"><br>
+        <label for="name">Name</label><br>
+        <input type="text" name="name" id="name"><br>
+        <label for="pass">Pass</label><br>
+        <input type="password" name="pass" id="pass"><br>
+        <div id="btnAlignment">
+          <input type="submit" value="Enviar">
+        </div>
+      </form>
+    </div>
+    <%- include('layout/footer'); %>
+  </div>
+</body>
+</html>

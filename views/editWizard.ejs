@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <%- include('layoutDoubleSub/head'); %>
+    <%- include('form/style'); %>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <%- include('layoutDoubleSub/header'); %>
+    <div id="main" style="display: flex; justify-content: center">
+      <%if (typeof msg !== 'undefined' && msg !== '') { %>
+        <h2><%- msg %></h2>
+      <% } %>
+      <form method="POST" action="/wizards/edit/<%=data.id%>" style="max-height: 470px;" enctype="multipart/form-data">
+        <h2>Edit record</h2>
+        <label for="user">Name</label><br>
+        <input type="text" name="name" id="name" value="<%=data.name%>" required><br>
+        <label for="pass">Description</label><br>
+        <textarea name="desc" id="desc" rows="10" style="width: 100%; resize: none" required><%=data.description%></textarea>
+        <input type="file" name="img" id="img"><br>
+        <div id="btnAlignment">
+          <input type="submit" value="Enviar">
+        </div>
+      </form>
+    </div>
+    <%- include('layoutDoubleSub/footer'); %>
+  </div>
+</body>
+</html>

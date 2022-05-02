@@ -1,0 +1,20 @@
+<div id="header">
+    <div>
+        <img src="assets/logo.png" alt="">
+    </div>
+    <div>
+        <ul>
+            <li><a href="/wizards">Database</a></li>
+            <li>|</li>
+            <% if (typeof isLoggedIn !== 'undefined' && isLoggedIn !== '') { %>
+                <li>Olá, <%=user%></li>
+                <li>|</li>
+                <li><a href="/logout">Logout</a></li>
+            <% }else{ %>
+                <li><a href="/login">Login</a></li>
+                <li>|</li>
+                <li><a href="/registration">Registration</a></li>
+            <% } %>
+        </ul>
+    </div>
+</div>
